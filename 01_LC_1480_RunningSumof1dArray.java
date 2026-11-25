@@ -1,18 +1,12 @@
-class NumArray {
+class Solution {
+    public int[] runningSum(int[] nums) {
 
-    int[] prefix;
+        for (int i = 1; i < nums.length; i++) {
 
-    public NumArray(int[] nums) {
+            nums[i] = nums[i] + nums[i - 1];
 
-        prefix = new int[nums.length + 1];
-
-        for (int i = 0; i < nums.length; i++) {
-            prefix[i + 1] = prefix[i] + nums[i];
         }
-    }
 
-    public int sumRange(int left, int right) {
-
-        return prefix[right + 1] - prefix[left];
+        return nums;
     }
 }
