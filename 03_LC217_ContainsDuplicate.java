@@ -1,18 +1,19 @@
+import java.util.HashSet;
+
 class Solution {
-public:
-    bool containsDuplicate(vector<int>& nums) {
+    public boolean containsDuplicate(int[] nums) {
 
-        unordered_set<int> s;
+        HashSet<Integer> set = new HashSet<>();
 
-        for(int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < nums.length; i++) {
 
-            if(s.find(nums[i]) != s.end()) {
+            if (set.contains(nums[i])) {
                 return true;
             }
 
-            s.insert(nums[i]);
+            set.add(nums[i]);
         }
 
         return false;
     }
-};
+}
